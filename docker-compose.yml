@@ -1,0 +1,45 @@
+version: "3.5"
+
+services:
+    # image project
+    api-pontue:
+        container_name: api-pontue
+        build: .
+        ports:
+            - 8080:8080
+        restart: always
+        depends_on:
+            - mysql-local
+        volumes:
+            - .:/app/api-pontue
+            - vendor-api-pontue:/app/api-pontue/vendor
+        networks:
+            - mysql-local-network
+
+    mysql-local:
+        container_name: mysql
+        image: mysql:5.7
+        ports:
+        - "4444:4444"
+        volumes:
+        - mysql-local:/var/lib/mysql:rw
+        restart: always
+        environment:
+            MYSQL_DATABASE: 'pontue'
+            MYSQL_ROOT_PASSWORD: password
+        networks:
+        - mysql-local-network
+
+volumes:
+  vendor-api-pontue:
+   name: vendor-api-pontue
+
+  mysql-local:
+    name: mysql-local
+
+networks:
+    mysql-local-network:
+        name: mysql-local
+        driver: bridge
+
+
