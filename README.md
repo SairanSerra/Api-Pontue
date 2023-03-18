@@ -1,6 +1,6 @@
 # Tutorial para utilizar aplicação
 
-#Primeiro Passo
+# Primeiro Passo
 
 1 - Primeiramente, o Docker só tem plena compatibilidade com o Windows 10.
 2 - Baixe o Docker neste link: https://www.docker.com/products/docker-desktop
@@ -29,4 +29,4 @@ wsl --set-default-version 2
 
 12 - E pronto! Agora, teste o Docker e o Docker Compose para verificar se tudo está ok.
 
-#Segundo passo
+# Segundo passo
