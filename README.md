@@ -2,7 +2,7 @@
 
 # Primeiro Passo
 
-1 - Primeiramente, o Docker só tem plena compatibilidade com o Windows 10.
+1 - Primeiramente, o Docker só tem plena compatibilidade com o Windows 10. <br/>
 2 - Baixe o Docker neste link: https://www.docker.com/products/docker-desktop
 3 - Instale o Docker. A instalação é simples. O Docker Compose já será instalado juntamente.
 4 - Apos instalar o Docker, é necessário instalar o WSL (Windows Subsystem for Linux). Para tanto, abra um terminal de linha de comando em modo administrativo e digite o comando abaixo:
