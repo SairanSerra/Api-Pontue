@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class Health extends Controller
 {
-    public function verifyHealthAPI(){
+    public function VerifyHealthAPI(){
 
         $dataResponse = [
             'status' => 'RUNING',
