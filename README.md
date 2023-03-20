@@ -40,4 +40,4 @@ wsl --set-default-version 2 <br/>
 # Informações Extra
 
 1 - Documentação Postman https://documenter.getpostman.com/view/21994723/2s93K1pzK6 </br>
-2- Acesso do Banco local ( Host = 127.0.0.1 , User = root, Password = password, port = 3305
+2- Acesso do Banco local ( Host = 127.0.0.1 , User = root, Password = password, port = 3305 )
