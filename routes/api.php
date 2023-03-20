@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\Books;
 use App\Http\Controllers\Games;
 use App\Http\Controllers\Health;
 use App\Http\Controllers\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,5 +28,13 @@ Route::group(['middleware' => 'auth:sanctum', 'prefix' => '/v1/jogo'],function (
     Route::put('/atualiza', [Games::class, 'UpdateGame']);
     Route::post('/novo', [Games::class, 'CreateGame']);
     Route::delete('/excluir', [Games::class, 'DeleteGame']);
+
+});
+Route::group(['middleware' => 'auth:sanctum', 'prefix' => '/v1/livro'],function (){
+
+    Route::get('/lista', [Books::class, 'ListBooks']);
+    Route::put('/atualiza', [Books::class, 'UpdateBook']);
+    Route::post('/novo', [Books::class, 'CreateBook']);
+    Route::delete('/excluir', [Books::class, 'DeleteBook']);
 
 });

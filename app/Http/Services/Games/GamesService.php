@@ -9,24 +9,24 @@ use App\Models\GamesModel;
 class GamesService
 {
 
-    private $games;
+    private $modelGames;
 
     public function __construct()
     {
-        $this->games = new GamesModel();
+        $this->modelGames = new GamesModel();
     }
 
     public function ListGames(array $request, string $idUser)
     {
 
-        $listGames = $this->games->where('idUser', $idUser)->get();
+        $listGames = $this->modelGames->where('idUser', $idUser)->get();
 
         return ListGamesResource::collection($listGames);
     }
     public function UpdateGame(array $request, string $idUser)
     {
 
-        $game = $this->games->where('idUser', $idUser)
+        $game = $this->modelGames->where('idUser', $idUser)
                      ->where('id', $request['idGame'])->first();
 
         if (!$game) {
@@ -48,7 +48,7 @@ class GamesService
         // add idUser in obj
         $request['idUser'] = $idUser;
 
-        $createGame = $this->games->create($request);
+        $createGame = $this->modelGames->create($request);
 
         return response()->json([], 201);
     }
@@ -56,7 +56,7 @@ class GamesService
     public function DeleteGame(array $request, string $idUser)
     {
 
-        $game = $this->games->where('idUser', $idUser)
+        $game = $this->modelGames->where('idUser', $idUser)
                      ->where('id', $request['idGame'])->first();
 
         if (!$game) {
