@@ -30,3 +30,9 @@ wsl --set-default-version 2 <br/>
 12 - E pronto! Agora, teste o Docker e o Docker Compose para verificar se tudo está ok. <br/>
 
 # Segundo passo
+
+1 - Clone o respositório <br/>
+2 - Faça um checkout para a branch master
+3 - Rode o comando no diretório raíz do projeto (docker-compose up)
+4 - Enter no docker desktop no terminal do projeto rodando de rode o seguinte comando (php artisan migrate --force)
+5 - Projeto está pronto basta seguir a documentação do <b>Postman</b> e testar a API
