@@ -4,6 +4,7 @@ namespace App\Http\Services\User;
 
 use App\Exceptions\CustomException;
 use App\Http\Resources\LoginResource;
+use App\Http\Utils\Helpers;
 use App\Models\UserModel;
 use Illuminate\Support\Facades\Hash;
 
@@ -11,11 +12,13 @@ class UserService
 {
 
     private $user;
+    private $helper;
 
     public function __construct()
     {
 
         $this->user = new UserModel();
+        $this->helper = new Helpers();
     }
 
     public function Login(array $request)
@@ -61,6 +64,46 @@ class UserService
         $this->user->create($request);
 
         return response()->json([],201);
+    }
+
+    public function ResetPassword(array $request){
+
+        $findAccount = $this->user->where('email', $request['email'])->first();
+
+        if(!$findAccount){
+            throw new CustomException('Conta não encontrada', 400);
+        }
+
+        $newPassword = $this->helper->CreateRandomPassword();
+
+        $changePassword = $findAccount->update(['password' => bcrypt($newPassword)]);
+
+        $response = [
+            'message' => 'Senha Aletrada com sucesso',
+            'newPassword' => $newPassword
+        ];
+
+        return response()->json($response, 200);
+    }
+
+    public function ChangePassword(array $request){
+
+        $account = $this->user->where('email', $request['email'])->first();
+
+        if(!$account){
+            throw new CustomException('Conta não encontrada', 400);
+        }
+
+        $passwordIsLike = $request['password'] === $request['confirmPassword'];
+
+        if(!$passwordIsLike){
+            throw new CustomException('Senhas divergentes', 400);
+        }
+
+        $changePassword = $account->update(['password' => bcrypt($request['password'])]);
+
+        return response()->json([], 204);
+
     }
 
 }

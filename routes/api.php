@@ -21,6 +21,8 @@ Route::get('/', [Health::class, 'VerifyHealthAPI']);
 
 Route::post('/login', [User::class, 'Login']);
 Route::post('/nova/conta', [User::class, 'SignUP']);
+Route::post('/reset/senha', [User::class, 'ResetPassword']);
+Route::post('/mudar/senha', [User::class, 'ChangePassword']);
 
 Route::group(['middleware' => 'auth:sanctum', 'prefix' => '/v1/jogo'],function (){
 
