@@ -34,7 +34,7 @@ wsl --set-default-version 2 <br/>
 1 - Clone o respositório <br/>
 2 - Faça um checkout para a branch master <br/>
 3 - Rode o comando ( <i>docker-compose up</i> ) no diretório raíz do projeto <br/>
-4 - Enter no docker desktop no terminal do projeto rodando de rode o seguinte comando <i>php artisan migrate --force</i> <br/>
+4 - Enter no docker desktop no container do projeto (api-pontue) e rode o seguinte comando <i>php artisan migrate --force</i> <br/>
 5 - Projeto está pronto basta seguir a documentação do <b>Postman</b> e testar a API <br/>
 
 # Informações Extra
