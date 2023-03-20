@@ -36,3 +36,8 @@ wsl --set-default-version 2 <br/>
 3 - Rode o comando ( <i>docker-compose up</i> ) no diretório raíz do projeto <br/>
 4 - Enter no docker desktop no terminal do projeto rodando de rode o seguinte comando <i>php artisan migrate --force</i> <br/>
 5 - Projeto está pronto basta seguir a documentação do <b>Postman</b> e testar a API <br/>
+
+# informações Extra
+
+1 - Documentação Postman https://documenter.getpostman.com/view/21994723/2s93K1pzK6 </br>
+2- Acesso do Banco local ( Host = 127.0.0.1 , User = root, Password = password, port = 3305
