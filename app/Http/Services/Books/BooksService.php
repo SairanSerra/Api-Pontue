@@ -32,7 +32,7 @@ class BooksService {
             throw new CustomException('Livro não encontrado', 400);
         }
 
-        //remove obj idBook for update game
+        //remove obj idBook for update book
         $request['idBook'] = null;
 
 
