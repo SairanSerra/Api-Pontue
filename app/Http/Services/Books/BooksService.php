@@ -18,9 +18,9 @@ class BooksService {
     public function ListBooks(array $request, string $idUser)
     {
 
-        $listGames = $this->modelBooks->where('idUser', $idUser)->get();
+        $listBook = $this->modelBooks->where('idUser', $idUser)->get();
 
-        return ListBooksResource::collection($listGames);
+        return ListBooksResource::collection($listBook);
     }
     public function UpdateBook(array $request, string $idUser)
     {
@@ -36,7 +36,7 @@ class BooksService {
         $request['idBook'] = null;
 
 
-        $updateGame = $book->update($request);
+        $updateBook = $book->update($request);
 
         return response()->json([], 204);
     }
