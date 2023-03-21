@@ -47,7 +47,7 @@ class BooksService {
         // add idUser in obj
         $request['idUser'] = $idUser;
 
-        $createGame = $this->modelBooks->create($request);
+        $createBook = $this->modelBooks->create($request);
 
         return response()->json([], 201);
     }
